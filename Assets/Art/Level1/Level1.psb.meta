@@ -93,6 +93,28 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
+  - name: Coin
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3892
+      y: 4
+      width: 63
+      height: 63
+    spriteID: 3e38055805879438485532966c842fb1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3892, y: 4}
+    spritePosition: {x: 2009, y: 1272}
   - name: Player
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -189,6 +211,16 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: Coin
+    spriteName: Coin
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3e38055805879438485532966c842fb1
+    layerID: 5
+    mosaicPosition: {x: 3892, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Player
     spriteName: Player
     isGroup: 0
