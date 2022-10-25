@@ -6,6 +6,9 @@ public class NewPlayer : PhysicsObject
 {
     [SerializeField] private float maxSpeed = 3f;
     [SerializeField] private float jumpHeight = 7f;
+    public int coinsCollected;
+    public int health;
+    public List<string> upgrades;
     // Start is called before the first frame update
     void Start()
     {
