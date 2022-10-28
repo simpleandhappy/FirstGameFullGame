@@ -5,22 +5,21 @@ using UnityEngine;
 public class Collectable : MonoBehaviour
 {
     enum ItemType {Coin, Health, Upgrade};
-    private Dictionary<ItemType, string> collectables = new Dictionary<ItemType, string>(){
-        {ItemType.Coin, "coin"},
-        {ItemType.Health, "health"},
-        {ItemType.Upgrade, "upgrade"}
-    };
     [SerializeField] private ItemType itemType;
+    NewPlayer player;
 
     // Start is called before the first frame update
-    void Start(){}
+    void Start(){
+        player = GameObject.Find("Player").GetComponent<NewPlayer>();
+    }
 
     // Update is called once per frame
     void Update(){}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        
+        Debug.Log(player);
         if (collision.gameObject.name == "Player")
         {
             switch(itemType){
@@ -34,17 +33,25 @@ public class Collectable : MonoBehaviour
                     AddUpgrade();
                 break;
             }
+            player.UpdateUI();
             Destroy(gameObject);
         }
     }
 
     void AddCoin(){
-        GameObject.Find("Player").GetComponent<NewPlayer>().coinsCollected += 1;
+        player.coinsCollected += 1;
     }
     void AddHealth(){
-        GameObject.Find("Player").GetComponent<NewPlayer>().health += 1;
+        //potentially can be optimized with %
+        if (player.health <= (player.maxHealth - 100)) {
+            player.health += 100;
+        }
+        else if (player.health > (player.maxHealth - 100) && player.health < player.maxHealth){
+            player.health = player.maxHealth;
+        }
+        
     }
     void AddUpgrade(){
-        GameObject.Find("Player").GetComponent<NewPlayer>().upgrades.Add("1");
+        player.upgrades.Add("1");
     }
 }
