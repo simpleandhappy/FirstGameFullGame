@@ -93,6 +93,28 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
+  - name: Key
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3845
+      y: 4
+      width: 102
+      height: 109
+    spriteID: a54812a142ca24ad9a8eca759862679b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3845, y: 4}
+    spritePosition: {x: 1736, y: 1250}
   - name: Coin
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -100,8 +122,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 3892
-      y: 4
+      x: 3845
+      y: 233
       width: 63
       height: 63
     spriteID: 3e38055805879438485532966c842fb1
@@ -113,7 +135,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 3892, y: 4}
+    uvTransform: {x: 3845, y: 233}
     spritePosition: {x: 2009, y: 1272}
   - name: Player
     originalName: 
@@ -123,7 +145,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 3845
-      y: 4
+      y: 121
       width: 39
       height: 104
     spriteID: 105ff083f2e2be7498aa83bea920b62c
@@ -135,7 +157,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 3845, y: 4}
+    uvTransform: {x: 3845, y: 121}
     spritePosition: {x: 1901, y: 1249}
   - name: Ground1
     originalName: 
@@ -211,13 +233,23 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: Key
+    spriteName: Key
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a54812a142ca24ad9a8eca759862679b
+    layerID: 8
+    mosaicPosition: {x: 3845, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Coin
     spriteName: Coin
     isGroup: 0
     parentIndex: -1
     spriteID: 3e38055805879438485532966c842fb1
     layerID: 5
-    mosaicPosition: {x: 3892, y: 4}
+    mosaicPosition: {x: 3845, y: 233}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -227,7 +259,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 105ff083f2e2be7498aa83bea920b62c
     layerID: 4
-    mosaicPosition: {x: 3845, y: 4}
+    mosaicPosition: {x: 3845, y: 121}
     flatten: 0
     isImported: 1
     isVisible: 1

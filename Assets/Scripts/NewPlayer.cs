@@ -11,7 +11,10 @@ public class NewPlayer : PhysicsObject
     public int maxHealth = 1000;
     public int coinsCollected;
     public int health;
-    public List<string> upgrades;
+
+    public Sprite keySprite;
+    public Image inventoryItemImage;
+    public Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
 
     //UI
     public TMP_Text coinsText;
@@ -39,5 +42,10 @@ public class NewPlayer : PhysicsObject
         //set health bar width to percentage of original value player health
         float newHealth = healthBarOrigSize.x * ((float)health / (float)maxHealth);
         healthBar.rectTransform.sizeDelta = new Vector2(newHealth, healthBar.rectTransform.sizeDelta.y);
+    }
+
+    public void AddInventoryItem(string name, Sprite sprite){
+        inventory.Add(name, sprite);
+        inventoryItemImage.sprite = inventory[name];
     }
 }

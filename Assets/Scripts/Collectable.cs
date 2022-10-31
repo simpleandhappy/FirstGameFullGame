@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    enum ItemType {Coin, Health, Upgrade};
+    enum ItemType {Coin, Health, Item};
     [SerializeField] private ItemType itemType;
     NewPlayer player;
 
     // Start is called before the first frame update
     void Start(){
         player = GameObject.Find("Player").GetComponent<NewPlayer>();
+       
     }
 
     // Update is called once per frame
@@ -18,8 +19,6 @@ public class Collectable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        Debug.Log(player);
         if (collision.gameObject.name == "Player")
         {
             switch(itemType){
@@ -29,8 +28,8 @@ public class Collectable : MonoBehaviour
                 case ItemType.Health:
                     AddHealth();
                 break;
-                case ItemType.Upgrade:
-                    AddUpgrade();
+                case ItemType.Item:
+                    player.AddInventoryItem("key", player.keySprite);
                 break;
             }
             player.UpdateUI();
@@ -50,8 +49,5 @@ public class Collectable : MonoBehaviour
             player.health = player.maxHealth;
         }
         
-    }
-    void AddUpgrade(){
-        player.upgrades.Add("1");
     }
 }
