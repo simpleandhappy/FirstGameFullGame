@@ -12,8 +12,8 @@ public class NewPlayer : PhysicsObject
     public int coinsCollected;
     public int health;
 
-    public Sprite keySprite;
     public Image inventoryItemImage;
+    public Sprite emptyInventory;
     public Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
 
     //UI
@@ -47,5 +47,10 @@ public class NewPlayer : PhysicsObject
     public void AddInventoryItem(string name, Sprite sprite){
         inventory.Add(name, sprite);
         inventoryItemImage.sprite = inventory[name];
+    }
+
+    public void RemoveInventoryItem(string name){
+        inventory.Remove(name);
+        inventoryItemImage.sprite = emptyInventory;
     }
 }

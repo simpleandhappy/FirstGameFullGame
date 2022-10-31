@@ -6,6 +6,8 @@ public class Collectable : MonoBehaviour
 {
     enum ItemType {Coin, Health, Item};
     [SerializeField] private ItemType itemType;
+    [SerializeField] private string itemName;
+    [SerializeField] private Sprite itemSprite;
     NewPlayer player;
 
     // Start is called before the first frame update
@@ -29,7 +31,7 @@ public class Collectable : MonoBehaviour
                     AddHealth();
                 break;
                 case ItemType.Item:
-                    player.AddInventoryItem("key", player.keySprite);
+                    player.AddInventoryItem(itemName, itemSprite);
                 break;
             }
             player.UpdateUI();
