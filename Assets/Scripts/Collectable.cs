@@ -8,11 +8,9 @@ public class Collectable : MonoBehaviour
     [SerializeField] private ItemType itemType;
     [SerializeField] private string itemName;
     [SerializeField] private Sprite itemSprite;
-    NewPlayer player;
 
     // Start is called before the first frame update
     void Start(){
-        player = GameObject.Find("Player").GetComponent<NewPlayer>();
        
     }
 
@@ -31,24 +29,24 @@ public class Collectable : MonoBehaviour
                     AddHealth();
                 break;
                 case ItemType.Item:
-                    player.AddInventoryItem(itemName, itemSprite);
+                    NewPlayer.Instance.AddInventoryItem(itemName, itemSprite);
                 break;
             }
-            player.UpdateUI();
+            NewPlayer.Instance.UpdateUI();
             Destroy(gameObject);
         }
     }
 
     void AddCoin(){
-        player.coinsCollected += 1;
+        NewPlayer.Instance.coinsCollected += 1;
     }
     void AddHealth(){
         //potentially can be optimized with %
-        if (player.health <= (player.maxHealth - 100)) {
-            player.health += 100;
+        if (NewPlayer.Instance.health <= (NewPlayer.Instance.maxHealth - 100)) {
+            NewPlayer.Instance.health += 100;
         }
-        else if (player.health > (player.maxHealth - 100) && player.health < player.maxHealth){
-            player.health = player.maxHealth;
+        else if (NewPlayer.Instance.health > (NewPlayer.Instance.maxHealth - 100) && NewPlayer.Instance.health < NewPlayer.Instance.maxHealth){
+            NewPlayer.Instance.health = NewPlayer.Instance.maxHealth;
         }
         
     }

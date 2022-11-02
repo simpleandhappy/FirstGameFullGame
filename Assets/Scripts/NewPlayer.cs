@@ -21,6 +21,17 @@ public class NewPlayer : PhysicsObject
     public Image healthBar;
     private Vector2 healthBarOrigSize;
 
+    //Singleton
+    private static NewPlayer instance;
+    public static NewPlayer Instance
+    {
+        get
+        {
+            if (instance == null) instance = GameObject.FindObjectOfType<NewPlayer>();
+            return instance;
+        }
+    }
+
     // Start is called before the first frame update
     void Start(){
         healthBarOrigSize = healthBar.rectTransform.sizeDelta;
