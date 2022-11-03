@@ -6,6 +6,7 @@ public class Enemy : PhysicsObject
 {
     [SerializeField] private float maxSpeed;
     [SerializeField] private int attackPower = 100;
+
     private int direction = 1;
     private RaycastHit2D rightLedgeRaycastHit;
     private RaycastHit2D leftLedgeRaycastHit;
@@ -32,7 +33,6 @@ public class Enemy : PhysicsObject
 
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject == NewPlayer.Instance.gameObject) {
-            Debug.Log("Damage Player");
             NewPlayer.Instance.health -= attackPower;
             NewPlayer.Instance.UpdateUI(); 
         }
@@ -71,6 +71,4 @@ public class Enemy : PhysicsObject
             direction = 1;
         }
     }
-
-
 }

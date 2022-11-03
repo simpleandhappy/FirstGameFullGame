@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 219671842}
   - component: {fileID: 219671841}
   m_Layer: 0
-  m_Name: LayerTwo
+  m_Name: ParallaxLayerTwo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3935,7 +3935,7 @@ GameObject:
   - component: {fileID: 1454892282}
   - component: {fileID: 1454892281}
   m_Layer: 0
-  m_Name: LayerNegTwo
+  m_Name: ParallaxLayerNegTwo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4791,7 +4791,7 @@ GameObject:
   - component: {fileID: 1917968312}
   - component: {fileID: 1917968313}
   m_Layer: 0
-  m_Name: LayerOne
+  m_Name: ParallaxLayerOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5003,7 +5003,7 @@ GameObject:
   - component: {fileID: 2018900429}
   - component: {fileID: 2018900430}
   m_Layer: 0
-  m_Name: LayerNegOne
+  m_Name: ParallaxLayerNegOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5341,7 +5341,7 @@ GameObject:
   - component: {fileID: 2112875890}
   - component: {fileID: 2112875891}
   m_Layer: 0
-  m_Name: Layers
+  m_Name: ParallaxLayers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5602,17 +5602,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1568901676}
     m_Modifications:
-    - target: {fileID: 2009765086514852981, guid: 79f3a7da458774f3e9224cfeabdfe373, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 5832138299665888011, guid: 79f3a7da458774f3e9224cfeabdfe373, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5832138299665888011, guid: 79f3a7da458774f3e9224cfeabdfe373, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7628067129837168730, guid: 79f3a7da458774f3e9224cfeabdfe373, type: 3}
       propertyPath: m_RootOrder
@@ -5657,10 +5649,6 @@ PrefabInstance:
     - target: {fileID: 7628067129837168730, guid: 79f3a7da458774f3e9224cfeabdfe373, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8415629266384324849, guid: 79f3a7da458774f3e9224cfeabdfe373, type: 3}
-      propertyPath: raycastOffset.x
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79f3a7da458774f3e9224cfeabdfe373, type: 3}
