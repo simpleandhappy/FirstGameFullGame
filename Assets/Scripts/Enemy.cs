@@ -17,6 +17,9 @@ public class Enemy : PhysicsObject
     [SerializeField] private float raycastLength = 1f;
     [SerializeField] private LayerMask raycastLayerMask;
 
+    public int health = 100;
+    private int maxHealth = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,10 @@ public class Enemy : PhysicsObject
         LedgeCheck();
         WallCheck();
         targetVelocity = new Vector2(maxSpeed * direction, 0);
+
+        if (health <= 0){
+            gameObject.SetActive(false);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision) {

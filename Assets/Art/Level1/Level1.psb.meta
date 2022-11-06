@@ -93,6 +93,28 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
+  - name: TestPixel
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3892
+      y: 236
+      width: 28
+      height: 26
+    spriteID: 6a8df1ba398fb48fda2c5557d29c6e33
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3890, y: 235}
+    spritePosition: {x: 2386, y: 1288}
   - name: Enemy
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -255,6 +277,16 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: TestPixel
+    spriteName: TestPixel
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6a8df1ba398fb48fda2c5557d29c6e33
+    layerID: 11
+    mosaicPosition: {x: 3892, y: 236}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Enemy
     spriteName: Enemy
     isGroup: 0

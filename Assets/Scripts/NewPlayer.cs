@@ -8,15 +8,19 @@ public class NewPlayer : PhysicsObject
 {
     [SerializeField] private float maxSpeed = 3f;
     [SerializeField] private float jumpHeight = 7f;
+    [SerializeField] private GameObject attackBox;
+    public int attackPower;
     public int maxHealth = 1000;
     public int coinsCollected;
     public int health;
+    public Vector2 direction;
 
-    public Image inventoryItemImage;
-    public Sprite emptyInventory;
+    //Inventory
     public Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
 
     //UI
+    public Image inventoryItemImage;
+    public Sprite emptyInventory;
     public TMP_Text coinsText;
     public Image healthBar;
     private Vector2 healthBarOrigSize;
@@ -35,6 +39,7 @@ public class NewPlayer : PhysicsObject
     // Start is called before the first frame update
     void Start(){
         healthBarOrigSize = healthBar.rectTransform.sizeDelta;
+        direction = new Vector2(1, 1);
     }
 
     // Update is called once per frame
@@ -45,6 +50,20 @@ public class NewPlayer : PhysicsObject
         if (Input.GetButtonDown("Jump") && grounded) {
             velocity.y = jumpHeight;
         }
+        
+        if (Input.GetButtonDown("Fire1")){
+            StartCoroutine("ActivateAttack");
+        }
+
+        //flip player based on direction
+        if (targetVelocity.x < -.01) {
+            direction = new Vector2(-1, 1);
+        } 
+        else if (targetVelocity.x > 0.01){
+            direction = new Vector2(1, 1);
+        }
+        transform.localScale = direction;
+        
     }
 
     public void UpdateUI(){
@@ -63,5 +82,11 @@ public class NewPlayer : PhysicsObject
     public void RemoveInventoryItem(string name){
         inventory.Remove(name);
         inventoryItemImage.sprite = emptyInventory;
+    }
+
+    private IEnumerator ActivateAttack(){
+        attackBox.SetActive(true);
+        yield return new WaitForSeconds(.2f);
+        attackBox.SetActive(false);
     }
 }
