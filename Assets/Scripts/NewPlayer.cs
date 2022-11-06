@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class NewPlayer : PhysicsObject
@@ -62,7 +63,10 @@ public class NewPlayer : PhysicsObject
         else if (targetVelocity.x > 0.01){
             direction = new Vector2(1, 1);
         }
-        transform.localScale = direction;
+
+        if (health <= 0){
+            Die();
+        }
         
     }
 
@@ -88,5 +92,9 @@ public class NewPlayer : PhysicsObject
         attackBox.SetActive(true);
         yield return new WaitForSeconds(.2f);
         attackBox.SetActive(false);
+    }
+
+    public void Die(){
+        SceneManager.LoadScene("FirstLevel");
     }
 }
