@@ -63,10 +63,11 @@ public class NewPlayer : PhysicsObject
         else if (targetVelocity.x > 0.01){
             direction = new Vector2(1, 1);
         }
-
+        transform.localScale = direction;
         if (health <= 0){
             Die();
         }
+
         
     }
 
