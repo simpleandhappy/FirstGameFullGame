@@ -8,6 +8,7 @@ This was just a learning opportunity theres still a ton work work to do
 - code clean up
     - add a game manager
     - properly group and prefab items
+    - load win message in new win scene
 
 - add a boss
 
