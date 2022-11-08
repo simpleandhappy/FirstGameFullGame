@@ -18,7 +18,12 @@ public class GameWorld : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col){
         if (col.gameObject == NewPlayer.Instance.gameObject){
-            NewPlayer.Instance.Die();
+            if (NewPlayer.Instance.canWin){
+                NewPlayer.Instance.Win();
+            }
+            else {
+                NewPlayer.Instance.Die();
+            }
         }
     }
 }

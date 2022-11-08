@@ -15,6 +15,7 @@ public class NewPlayer : PhysicsObject
     public int coinsCollected;
     public int health;
     public Vector2 direction;
+    public bool canWin = false;
 
     //Inventory
     public Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
@@ -23,6 +24,7 @@ public class NewPlayer : PhysicsObject
     public Image inventoryItemImage;
     public Sprite emptyInventory;
     public TMP_Text coinsText;
+    public GameObject winText;
     public Image healthBar;
     private Vector2 healthBarOrigSize;
 
@@ -54,6 +56,11 @@ public class NewPlayer : PhysicsObject
         
         if (Input.GetButtonDown("Fire1")){
             StartCoroutine("ActivateAttack");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
 
         //flip player based on direction
@@ -97,5 +104,9 @@ public class NewPlayer : PhysicsObject
 
     public void Die(){
         SceneManager.LoadScene("FirstLevel");
+    }
+
+    public void Win(){
+       winText.SetActive(true);
     }
 }
