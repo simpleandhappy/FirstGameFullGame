@@ -10,5 +10,8 @@ This was just a learning opportunity theres still a ton work work to do
     - properly group and prefab items
     - load win message in new win scene
 
-- add a boss
+- add second level
+- add music
+- add sounds
+- add start menu
 
