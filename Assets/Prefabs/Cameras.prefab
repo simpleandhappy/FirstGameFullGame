@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8110762246019243571}
   - component: {fileID: 8110762246019243569}
   - component: {fileID: 8110762246019243570}
+  - component: {fileID: 593082341}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -88,6 +89,19 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!114 &593082341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8110762246019243564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c41ac9245b87c4192012080077d830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Damping: 0
 --- !u!1 &8110762246038341343
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +273,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 4797499071694321186, guid: a181e05c0ba2444b590e5cdfb6fcc8c9, type: 3}
+  m_LookAt: {fileID: 0}
   m_Follow: {fileID: 4797499071694321186, guid: a181e05c0ba2444b590e5cdfb6fcc8c9, type: 3}
   m_Lens:
     FieldOfView: 60
