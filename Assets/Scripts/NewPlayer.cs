@@ -15,7 +15,6 @@ public class NewPlayer : PhysicsObject
     public int coinsCollected;
     public int health;
     public Vector2 direction;
-    public bool canWin = false;
 
     //Inventory
     public Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
@@ -39,8 +38,16 @@ public class NewPlayer : PhysicsObject
         }
     }
 
+    void Awake(){
+        if (GameObject.Find("NewPlayer")) Destroy(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start(){
+        DontDestroyOnLoad(gameObject);
+        gameObject.name = "NewPlayer";
+        transform.position = GameObject.Find("SpawnPoint").transform.position;
+        
         healthBarOrigSize = healthBar.rectTransform.sizeDelta;
         direction = new Vector2(1, 1);
     }
@@ -66,6 +73,7 @@ public class NewPlayer : PhysicsObject
         //flip player based on direction
         if (targetVelocity.x < -.01) {
             direction = new Vector2(-1, 1);
+
         } 
         else if (targetVelocity.x > 0.01){
             direction = new Vector2(1, 1);
@@ -104,9 +112,5 @@ public class NewPlayer : PhysicsObject
 
     public void Die(){
         SceneManager.LoadScene("FirstLevel");
-    }
-
-    public void Win(){
-       winText.SetActive(true);
     }
 }

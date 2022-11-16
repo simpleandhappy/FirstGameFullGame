@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1132532699273972282}
   - component: {fileID: 1132532699273972281}
-  - component: {fileID: 1132532699273972283}
   m_Layer: 2
   m_Name: PolygonColliderBoundary
   m_TagString: Untagged
@@ -79,15 +78,3 @@ PolygonCollider2D:
       - {x: 37.8895, y: 10.415975}
       - {x: 4.946161, y: 10.704849}
       - {x: -2.166998, y: 10.7322235}
---- !u!114 &1132532699273972283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132532699273972280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5027759c5ce4f4c5d8fc1548b8c6889d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -17,10 +17,9 @@ public class Gate : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if (collision.gameObject.name == "Player"){
+        if (collision.gameObject == NewPlayer.Instance.gameObject){
             if (NewPlayer.Instance.inventory.ContainsKey(requiredInventoryItem)){
                 NewPlayer.Instance.RemoveInventoryItem(requiredInventoryItem);
-                NewPlayer.Instance.canWin = true;
                 Destroy(gameObject);
             }
         }
