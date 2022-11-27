@@ -19,14 +19,6 @@ public class NewPlayer : PhysicsObject
     //Inventory
     public Dictionary<string, Sprite> inventory = new Dictionary<string, Sprite>();
 
-    //UI
-    public Image inventoryItemImage;
-    public Sprite emptyInventory;
-    public TMP_Text coinsText;
-    public GameObject winText;
-    public Image healthBar;
-    private Vector2 healthBarOrigSize;
-
     //Singleton
     private static NewPlayer instance;
     public static NewPlayer Instance
@@ -48,7 +40,7 @@ public class NewPlayer : PhysicsObject
         gameObject.name = "NewPlayer";
         transform.position = GameObject.Find("SpawnPoint").transform.position;
         
-        healthBarOrigSize = healthBar.rectTransform.sizeDelta;
+        GameManager.Instance.healthBarOrigSize = GameManager.Instance.healthBar.rectTransform.sizeDelta;
         direction = new Vector2(1, 1);
     }
 
@@ -87,21 +79,21 @@ public class NewPlayer : PhysicsObject
     }
 
     public void UpdateUI(){
-        coinsText.text = coinsCollected.ToString();
+        GameManager.Instance.coinsText.text = coinsCollected.ToString();
 
         //set health bar width to percentage of original value player health
-        float newHealth = healthBarOrigSize.x * ((float)health / (float)maxHealth);
-        healthBar.rectTransform.sizeDelta = new Vector2(newHealth, healthBar.rectTransform.sizeDelta.y);
+        float newHealth = GameManager.Instance.healthBarOrigSize.x * ((float)health / (float)maxHealth);
+        GameManager.Instance.healthBar.rectTransform.sizeDelta = new Vector2(newHealth, GameManager.Instance.healthBar.rectTransform.sizeDelta.y);
     }
 
     public void AddInventoryItem(string name, Sprite sprite){
         inventory.Add(name, sprite);
-        inventoryItemImage.sprite = inventory[name];
+        GameManager.Instance.inventoryItemImage.sprite = inventory[name];
     }
 
     public void RemoveInventoryItem(string name){
         inventory.Remove(name);
-        inventoryItemImage.sprite = emptyInventory;
+        GameManager.Instance.inventoryItemImage.sprite = GameManager.Instance.emptyInventory;
     }
 
     private IEnumerator ActivateAttack(){
@@ -111,6 +103,9 @@ public class NewPlayer : PhysicsObject
     }
 
     public void Die(){
-        SceneManager.LoadScene("FirstLevel");
+        transform.position = GameObject.Find("SpawnPoint").transform.position;
+        health = maxHealth;
+        coinsCollected = 0;
+        UpdateUI();
     }
 }
