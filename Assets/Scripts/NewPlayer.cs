@@ -32,12 +32,13 @@ public class NewPlayer : PhysicsObject
 
     void Awake(){
         if (GameObject.Find("NewPlayer")) Destroy(gameObject);
+        gameObject.name = "NewPlayer";
     }
 
     // Start is called before the first frame update
     void Start(){
         DontDestroyOnLoad(gameObject);
-        gameObject.name = "NewPlayer";
+        Debug.Log(SceneManager.GetActiveScene().name);
         transform.position = GameObject.Find("SpawnPoint").transform.position;
         
         GameManager.Instance.healthBarOrigSize = GameManager.Instance.healthBar.rectTransform.sizeDelta;

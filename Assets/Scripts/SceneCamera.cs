@@ -7,8 +7,10 @@ public class SceneCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        vcam.Follow = NewPlayer.Instance.transform;
-        vcam.LookAt = NewPlayer.Instance.transform;
+        if (GameObject.Find("NewPlayer")){
+            vcam.Follow = NewPlayer.Instance.transform;
+            vcam.LookAt = NewPlayer.Instance.transform;
+        }
     }
 
     // Update is called once per frame
